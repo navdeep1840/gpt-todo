@@ -47,16 +47,16 @@ export const useBoardStore = create<BoardState>((set, get) => ({
     }
 
     await databases.deleteDocument(
-      "6499d52134b0b71a523c",
-      "6499d53ce805a05a9fb7",
+      process.env.NEXT_PUBLIC_PROJECT_DATABASE!,
+      process.env.NEXT_PUBLIC_PROJECT_COLLECTION!,
       todo.$id
     );
   },
 
   updateTodoDB: async (todo, columnId) => {
     await databases.updateDocument(
-      "6499d52134b0b71a523c",
-      "6499d53ce805a05a9fb7",
+      process.env.NEXT_PUBLIC_PROJECT_DATABASE!,
+      process.env.NEXT_PUBLIC_PROJECT_COLLECTION!,
       todo.$id,
       {
         title: todo.title,
@@ -93,8 +93,8 @@ export const useBoardStore = create<BoardState>((set, get) => ({
     }
 
     const { $id } = await databases.createDocument(
-      "6499d52134b0b71a523c",
-      "6499d53ce805a05a9fb7",
+      process.env.NEXT_PUBLIC_PROJECT_DATABASE!,
+      process.env.NEXT_PUBLIC_PROJECT_COLLECTION!,
       ID.unique(),
       {
         title: todo,

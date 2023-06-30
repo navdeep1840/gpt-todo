@@ -17,6 +17,7 @@
     "appwrite": "^11.0.0",
     "autoprefixer": "10.4.14",
     "axios": "^1.4.0",
+    "env": "^0.0.2",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
     "next": "13.4.7",

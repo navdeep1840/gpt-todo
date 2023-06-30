@@ -3,8 +3,8 @@ import { Board, Column, TypedColumn } from "@/typings";
 
 export const getTodosGroupByColumn = async () => {
   const data = await databases.listDocuments(
-    "6499d52134b0b71a523c",
-    "6499d53ce805a05a9fb7"
+    process.env.NEXT_PUBLIC_PROJECT_DATABASE!,
+    process.env.NEXT_PUBLIC_PROJECT_COLLECTION!
   );
 
   const todos = data.documents;
